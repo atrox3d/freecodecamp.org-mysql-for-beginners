@@ -4,7 +4,7 @@
 
 https://www.youtube.com/watch?v=uWkcxasFWzQ
 
-## GITHUB:
+## GITHUB EXAMPLE DATA REPO:
 
 https://github.com/bytebase/employee-sample-database
 
