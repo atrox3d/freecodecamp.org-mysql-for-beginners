@@ -44,3 +44,17 @@ set dept_no = (                 -- dest field to update with the result of the s
     limit 1                     -- get only the first
 );
 select * from employee.employee limit 20;
+
+select rand();  
+select floor(rand()*(2))+1;
+-- subquery to update employee.dept_no with :
+-- random department.dept_no or NULL
+select if(
+    floor(rand()*(2))+1 = 1,                    -- 1 or 2
+    null,                                       -- null
+    ( 
+        select dept_no from employee.department -- get random
+        order by rand()                         -- dept_no from
+        limit 1                                 -- department
+    )
+);
