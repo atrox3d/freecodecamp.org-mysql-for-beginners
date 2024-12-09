@@ -1,0 +1,6 @@
+set autocommit=0;
+set transaction isolation level read committed;
+session 1 - lock table products write;
+session 2 - update products - wait...
+session 3 - update products - wait...
+
