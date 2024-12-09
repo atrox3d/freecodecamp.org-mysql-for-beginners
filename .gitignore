@@ -7,3 +7,5 @@ build/
 
 secrets/
 mysql_data/
+mysql_dump/
+

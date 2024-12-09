@@ -12,6 +12,7 @@ services:
       # MYSQL_PASSWORD: ...
     volumes:
       - ./mysql_data:/var/lib/mysql
+      - ./mysql_dump:/dump
     ports:
       - "3306:3306"
     secrets:
