@@ -1,3 +1,4 @@
+use employee;
 drop procedure employee_count_dept;
 
 delimiter //                                        -- change delimiter
