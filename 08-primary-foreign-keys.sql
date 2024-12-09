@@ -45,6 +45,7 @@ set dept_no = (                 -- dest field to update with the result of the s
 );
 select * from employee.employee limit 20;
 
+
 select rand();  
 select floor(rand()*(2))+1;
 -- subquery to update employee.dept_no with :
@@ -56,5 +57,20 @@ select if(
         select dept_no from employee.department -- get random
         order by rand()                         -- dept_no from
         limit 1                                 -- department
+    )
+);
+
+-- final query to get random null in employee.dept_no
+-- to better test joins
+update employee.employee        -- dest table to update
+set dept_no = (                 -- dest field to update with the result of the subquery
+    select if(
+        floor(rand()*(2))+1 = 1,                    -- 1 or 2
+        null,                                       -- null
+        ( 
+            select dept_no from employee.department -- get random
+            order by rand()                         -- dept_no from
+            limit 1                                 -- department
+        )
     )
 );
