@@ -28,9 +28,9 @@ def get_sql_scripts_paths(path:str, wildcard='*.sql')-> Generator[Path, None, No
     assert path.is_dir()
     return sorted(path.glob(wildcard))
 
-def main(rename:bool=False):
+def main(path:str, rename:bool=False):
 
-    for script in get_sql_scripts_paths('brocode'):
+    for script in get_sql_scripts_paths(path):
         print(script.name)
         new_stem = renumber_stem(script.name)
         newscript = script.with_stem(new_stem)
@@ -40,4 +40,4 @@ def main(rename:bool=False):
             script.rename(newscript)
 
 if __name__ == "__main__":
-    main()
+    main('brocode')
