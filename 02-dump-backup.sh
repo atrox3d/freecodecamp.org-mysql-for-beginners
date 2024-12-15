@@ -6,3 +6,4 @@ docker compose exec -it db bash
     mysqldump -u root -p employee > dump/filename.sql
 # OR
 docker compose exec -it db /bin/bash -c 'mysqldump -u root -p employee > dump/test'
+# docker compose exec -it db /bin/bash -c 'mysqldump -u root -p --events --routines --triggers --all-databases > dump/MySQLData.sql'

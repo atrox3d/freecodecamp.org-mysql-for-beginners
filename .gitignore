@@ -10,3 +10,4 @@ mysql_data/
 mysql_data.old/
 mysql_dump/
 
+*.zip
